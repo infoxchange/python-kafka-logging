@@ -56,7 +56,7 @@ Get the project
 
 Reporting Issues
 ================
-If you have suggestions, bugs or other issues specific to this library, file them `here`_ or contact me at avihoo <at> taykey <dot> com.
+If you have suggestions, bugs or other issues specific to this library, file them `here`_ or contact me at avihoo.mamka <at> gmail <dot> com.
 
 
 
