@@ -32,7 +32,7 @@ Get the project
 	
 	.. code-block:: shell
 	
-		$ git clone https://github.com/taykey/python-kafka-logging/
+		$ git clone https://github.com/avihoo/python-kafka-logging/
 
 	2. Install a virtualenv
 	
@@ -62,5 +62,5 @@ If you have suggestions, bugs or other issues specific to this library, file the
 
 keywords: python, logging, handler, example, kafka, logs, logstash, formatter
 
-.. _here: https://github.com/taykey/python-kafka-logging/issues
+.. _here: https://github.com/avihoo/python-kafka-logging/issues
 

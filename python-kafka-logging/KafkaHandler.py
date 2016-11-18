@@ -1,21 +1,21 @@
-from kafka.client import KafkaClient
+from kafka.client import SimpleClient
 from kafka.producer import SimpleProducer, KeyedProducer
 import logging
-import traceback
-import sys
 
 
 class KafkaLoggingHandler(logging.Handler):
 
-    def __init__(self, hosts_list, topic, key=None):
+    def __init__(self, hosts_list, topic, **kwargs):
         logging.Handler.__init__(self)
-        self.kafka_client = KafkaClient(hosts_list)
-        self.key = key
+
+        self.kafka_client = SimpleClient(hosts_list)
+        self.key = kwargs.get("key", None)
         self.kafka_topic_name = topic
-        if not key:
-            self.producer = SimpleProducer(self.kafka_client)
+
+        if not self.key:
+            self.producer = SimpleProducer(self.kafka_client, **kwargs)
         else:
-            self.producer = KeyedProducer(self.kafka_client)
+            self.producer = KeyedProducer(self.kafka_client, **kwargs)
 
     def emit(self, record):
         # drop kafka logging to avoid infinite recursion
@@ -24,16 +24,20 @@ class KafkaLoggingHandler(logging.Handler):
         try:
             # use default formatting
             msg = self.format(record)
+            if isinstance(msg, unicode):
+                msg = msg.encode("utf-8")
+
             # produce message
             if not self.key:
                 self.producer.send_messages(self.kafka_topic_name, msg)
             else:
-                self.producer.send(self.kafka_topic_name, self.key, msg)
+                self.producer.send_messages(self.kafka_topic_name, self.key, msg)
         except (KeyboardInterrupt, SystemExit):
             raise
         except:
             self.handleError(record)
 
     def close(self):
-        self.producer.stop()
+        if self.producer is not None:
+            self.producer.stop()
         logging.Handler.close(self)
