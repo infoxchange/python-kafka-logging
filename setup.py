@@ -15,7 +15,7 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 packages = [
-    'python-kafka-logger',
+    'python-kafka-logging',
 ]
 
 install_requirements = parse_requirements('requirements.txt', session=False)
