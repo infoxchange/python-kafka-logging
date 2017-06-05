@@ -18,7 +18,7 @@ packages = [
     'python-kafka-logger',
 ]
 
-install_requirements = parse_requirements('requirements.txt')
+install_requirements = parse_requirements('requirements.txt', session=False)
 requirements = [str(ir.req) for ir in install_requirements]
 
 with open('README.rst', 'r', 'utf-8') as f:
