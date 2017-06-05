@@ -15,7 +15,7 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 packages = [
-    'python-kafka-logging',
+    'python-kafka-logger',
 ]
 
 install_requirements = parse_requirements('requirements.txt')
@@ -25,11 +25,11 @@ with open('README.rst', 'r', 'utf-8') as f:
     readme = f.read()
 
 setup(
-    name='python-kafka-logging',
+    name='python-kafka-logger',
     version=0.1,
     description='Simple python logging handler for forwarding logs to a kafka server.',
     long_description=readme + '\n\n',
-    maintainer="Taykey INC",
+    maintainer="Avihoo Mamka",
     maintainer_email="avihoo.mamka@gmail.com",
     author='Avihoo Mamka',
     author_email='avihoo.mamka@gmail.com',
