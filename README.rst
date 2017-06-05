@@ -12,7 +12,7 @@ Installing
 
 .. code-block:: shell
 
-	$ pip install python-kafka-logging
+	$ pip install python-kafka-logger
 
 
 How to use 
