@@ -31,10 +31,11 @@ class KafkaLoggingHandler(logging.Handler):
             if not self.key:
                 self.producer.send_messages(self.kafka_topic_name, msg)
             else:
-                self.producer.send_messages(self.kafka_topic_name, self.key, msg)
+                self.producer.send_messages(self.kafka_topic_name, self.key,
+                                            msg)
         except (KeyboardInterrupt, SystemExit):
             raise
-        except:
+        except Exception:
             self.handleError(record)
 
     def close(self):

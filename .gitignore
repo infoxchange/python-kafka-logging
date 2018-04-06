@@ -1,2 +1,3 @@
 dist/*
 python_kafka_logger.egg-info/*
+.idea/*
