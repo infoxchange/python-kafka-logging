@@ -26,7 +26,7 @@ with open('README.rst', 'r', 'utf-8') as f:
 
 setup(
     name='python-kafka-logger',
-    version=0.2,
+    version=0.3,
     description='Simple python logging handler for forwarding logs to a kafka server.',
     long_description=readme + '\n\n',
     maintainer="Avihoo Mamka",
@@ -41,11 +41,11 @@ setup(
     license='Apache 2.0',
     zip_safe=False,
     keywords=['python', 'logging', 'handler', 'example', 'kafka', 'logs', 'logstash', 'formatter'],
-    classifiers=(
+    classifiers=[
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
-    ),
+    ],
 )
