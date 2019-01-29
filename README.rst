@@ -2,7 +2,7 @@
 Python Kafka Logging Handler
 ===============================
 
-.. image:: https://img.shields.io/pypi/d/python-kafka-logger.svg
+.. image:: https://img.shields.io/pypi/dm/python-kafka-logger.svg
     :target: https://pypi.python.org/pypi/python-kafka-logger/
     :alt: Downloads
 .. image:: https://img.shields.io/pypi/v/python-kafka-logger.svg
