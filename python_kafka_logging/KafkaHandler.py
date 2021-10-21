@@ -24,7 +24,7 @@ class KafkaLoggingHandler(logging.Handler):
         try:
             # use default formatting
             msg = self.format(record)
-            # msg = msg.encode("utf-8")
+            msg = msg.encode("utf-8")
 
             # produce message
             if not self.key:
